@@ -43,8 +43,8 @@ class EngineReader(threading.Thread):
                 self.socketio.emit("analysis", {'analysis': analysis})
                 temp = temp_board
                 san = analysis[0:4]
-                # self.socketio.emit("board", chess.svg.board(temp,lastmove=chess.Move.from_uci(san), flipped=True, size=600))
-                self.socketio.emit("board", chess.svg.board(temp,lastmove=chess.Move.from_uci(san), size=600))
+                self.socketio.emit("board", chess.svg.board(temp,lastmove=chess.Move.from_uci(san), flipped=True, size=600))
+                # self.socketio.emit("board", chess.svg.board(temp,lastmove=chess.Move.from_uci(san), size=600))
                 
 
 class MoveReiceiver(threading.Thread):
